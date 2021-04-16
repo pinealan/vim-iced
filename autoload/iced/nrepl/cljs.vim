@@ -1,7 +1,9 @@
 let s:save_cpo = &cpoptions
 set cpoptions&vim
 
-let g:iced#cljs#default_env = get(g:, 'iced#cljs#default_env', 'figwheel-sidecar')
+let g:iced#cljs#default_env = get(g:, 'iced#cljs#default_env', 'figwheel-main')
+let s:using_env = {}
+let s:env_options = []
 let s:quit_code = ':cljs/quit'
 
 let s:env = {

@@ -33,7 +33,7 @@ function! iced#operation#eval(type) abort
   if s:register !=# '"'
     let opt['callback'] = funcref('s:yank_and_out')
   endif
-  return s:eval({code -> iced#repl#execute('eval_code', code, opt)})
+  return s:eval({code -> iced#nrepl#eval#code(code, opt)})
 endfunction
 
 function! iced#operation#setup(func_name) abort
